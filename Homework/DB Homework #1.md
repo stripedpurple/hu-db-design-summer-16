@@ -17,4 +17,15 @@
 
 10\. All data about the teachers related to the build will be lost. To counter this issue the teacher data should be kept in a separate table.
 
-11\. 
+### CHAPTER 2
+
+3\. 
+
+5\.
+
+11\.
+
+
+
+
+

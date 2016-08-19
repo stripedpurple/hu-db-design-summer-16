@@ -10,7 +10,7 @@ CREATE TABLE Customers (
 CREATE TABLE Purchases (
     id             SERIAL PRIMARY KEY,
     customerId     INTEGER REFERENCES Customers(id),
-    purchDate      DATETIME
+    purchDate      TIMESTAMP WITH TIME ZONE
 );
 
 CREATE TABLE Publishers (
@@ -26,6 +26,8 @@ CREATE TABLE Books (
 );
 
 -- Refs Author Books
+-- The reason for this table is that a book can have many authors 
+-- and many authors have more than one book
 CREATE TABLE Authors (
     id            SERIAL PRIMARY KEY,
     fname         VARCHAR(45),
@@ -40,6 +42,7 @@ CREATE TABLE AuthorBooks (
 CREATE UNIQUE INDEX ux_AuthorBooks ON AuthorBooks(authorId, bookId);
 
 -- Contains details about 
+-- The rational behind this table is that a order can contain multiple items 
 CREATE TABLE PurchaseDetails (
     id            SERIAL PRIMARY KEY,
     purchId       INTEGER REFERENCES Purchases(id),
